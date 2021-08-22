@@ -1,0 +1,36 @@
+<div class="login-container">
+    <div class="login"> 
+        <div class="login-body-container">
+            <form>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input type="email" matInput required>
+                    <span class="material-icons" matSuffix>email</span>
+                    <mat-error></mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput required>
+                    <span class="material-icons" matSuffix>lock</span>
+                    <mat-error></mat-error>
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div class="login-action-container">
+            <div class="login-action-submit">
+                <button mat-raised-button color="primary">Login</button>
+            </div>
+            <div class="login-action-reset">
+                <button mat-raised-button color="warn">Reset</button>
+            </div>
+        </div>
+        <div class="login-option-container">
+            <div class="option-container">
+                <div>Forgot Password?</div>
+                <div>Or</div>
+                <div>New User?</div>
+            </div>
+        </div>
+    </div>
+</div>

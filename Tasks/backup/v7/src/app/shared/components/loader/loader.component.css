@@ -1,0 +1,49 @@
+@keyframes background-cover-animation{
+    from{opacity: 0;}
+    to{opacity: 0.9;}
+}
+.background-cover{
+    width:100vw;
+    height:100vh;
+    background-color: black;
+    opacity: 0.9;
+    display: block;
+    position: absolute;
+    color: white;
+    animation-name: background-cover-animation;
+    animation-duration: 0.5s;
+    animation-timing-function:ease-in-out;
+    z-index:2;
+}
+.loader{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    margin-top: 25vh;
+}
+
+@keyframes loader-rings-animation{
+    from{transform: rotate(360deg);}
+    to{transform: rotate(0deg)}
+}
+
+.loader-rings{
+    width: 5vw;
+    height: 10vh;
+    background-color: transparent;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: white dashed 2px;
+    border-left: white dashed 2px;
+    transform: rotate(360deg);
+    animation: loader-rings-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.loader-message{
+    display: block;
+    position: absolute;
+    margin-top: 12vh;
+}

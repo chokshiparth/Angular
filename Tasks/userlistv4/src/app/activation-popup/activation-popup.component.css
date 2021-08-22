@@ -1,0 +1,21 @@
+p{
+    margin-top: 10vh;
+    font-size: 18px;
+}
+
+#main{
+    width:100vw;
+    height:100vh;
+}
+
+#box{
+    height: 30vh;
+    width: 30vw;
+    margin: auto;
+    margin-top: 20vh;
+    background-color: white;
+    text-align: center;
+    padding:5px;
+    box-shadow: lightgray 1px -1px  10px;
+    border-radius: 3%;
+}

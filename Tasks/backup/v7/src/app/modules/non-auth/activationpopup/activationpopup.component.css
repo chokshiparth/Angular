@@ -1,0 +1,15 @@
+p{
+    margin-top: 10vh;
+    font-size: 18px;
+}
+#box{
+    position: absolute;
+    height: 30vh;
+    width: 30vw;
+    margin-left: 35vw;
+    margin-top: 20vh;
+    background-color: white;
+    text-align: center;
+    padding:5px;
+    box-shadow: lightgray 1p    x -1px  50px;
+}

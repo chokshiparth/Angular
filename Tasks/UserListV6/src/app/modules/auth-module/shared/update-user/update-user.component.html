@@ -1,0 +1,80 @@
+<h1 mat-dialog-title>
+    Edit User
+</h1>
+<hr>
+<div mat-dialog-content>
+    <form [formGroup]="updateUser">
+        <tr>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input type="text" required matInput formControlName="firstname">
+                    <mat-error *ngIf="updateUser.get('firstname')?.hasError('required')">Please add first name.</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" required matInput formControlName="lastname">
+                    <mat-error *ngIf="updateUser.get('lastname')?.hasError('required')">Please add last name.</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Gender</mat-label>
+                    <input type="text" required matInput formControlName="gender">
+                    <mat-error *ngIf="updateUser.get('gender')?.hasError('required')">Please select gender.</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <mat-select type="text" required formControlName="country" (blur)="fetchLocationName('state')">
+                        <mat-option *ngFor="let c of countryList" [value]="c">{{c.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="updateUser.get('country')?.hasError('required')">Please select country.</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>State</mat-label>
+                    <mat-select type="text" required formControlName="state" (blur)="fetchLocationName('city')">
+                        <mat-option *ngFor="let s of stateList" [value]="s">{{s.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="updateUser.get('state')?.hasError('required')">Please select state.</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <mat-select type="text" required matInput formControlName="city" (blur)="fetchLocationName('citystore')">
+                        <mat-option *ngFor="let c of cityList" [value]="c">{{c.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="updateUser.get('city')?.hasError('required')">Please select city.</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input type="email" required matInput formControlName="email">
+                    <mat-error *ngIf="updateUser.get('email')?.hasError('required')">Please add email address.</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline"    >
+                    <mat-label>Phone Number</mat-label>
+                    <input type="number" required matInput formControlName="phonenumber">
+                    <mat-error *ngIf="updateUser.get('phonenumber')?.hasError('required')">Please add phone number.</mat-error>
+                </mat-form-field>
+            </td>
+            <td style="display: flex; justify-content: space-between;">
+                <button mat-button mat-raised-button color="primary" style="border-radius: 0;" [disabled]="!updateUser.dirty || updateUser.invalid" (click)="updateUserDetails()">Update</button>
+                <button mat-button mat-raised-button color="warn" style="border-radius: 0;" (click)="closeDialog()">Close</button>
+            </td>
+        </tr>
+    </form>
+</div>

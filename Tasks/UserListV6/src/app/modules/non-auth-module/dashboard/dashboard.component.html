@@ -1,0 +1,32 @@
+<!-- Dashboard -->
+<div class="dashboard">
+    <!-- Dashboard Header --> 
+    <div class="dashboard-header">
+        <span class="title-dashboard">DASHBOARD</span>
+        <span class="material-icons menu-icon" (click)="logoutUser()">logout</span>
+    </div>
+    <!-- Dashboard View -->
+    <div class="dashboard-view-content">
+        <table>
+            <thead><tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+                <th>Actions</th>
+            </tr></thead>
+            <tbody> 
+                <tr *ngFor="let user of userData">
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.number}}</td>
+                    <td>
+                        <span class="material-icons" style="color:darkblue" (click)="openViewDialog(user.email)">visibility</span>
+                        <span class="material-icons" style="color:green" (click)="updateUser(user.email)">edit</span>
+                        <span class="material-icons" style="color:darkred" (click)="openDeleteDialog(user.email)">delete</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <app-error *ngIf="errorCheck" [errorMessage]="messageError">Get Error</app-error> -->

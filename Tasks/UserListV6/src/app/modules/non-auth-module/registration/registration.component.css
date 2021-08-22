@@ -1,0 +1,43 @@
+.registration-form-container{
+    position:absolute;
+    width:40vw;
+    background-color: white;
+    margin-left:30vw;
+    margin-top:15vh;
+    z-index:2;
+}
+ 
+.normalField{
+    width:12.8vw;
+}
+.normalFieldR{
+    width: 15.8vw;
+}
+.titleField{
+    width:7vw;
+}
+#row1{
+    display: flex;
+    justify-content: space-evenly;
+}
+#row2{
+    display: flex;
+    justify-content: flex-end;
+}
+#back-icon:hover{
+    cursor:pointer;
+    color: grey;
+}
+.submitBtn:hover{
+    background-color: seagreen;
+}
+.submitBtn:disabled{
+    cursor: not-allowed;
+    background-color:lightgray;
+}
+tr{
+    height: 10vh;
+}
+tr{
+    font-size: 12px;
+}

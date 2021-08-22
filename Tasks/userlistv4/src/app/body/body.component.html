@@ -1,0 +1,28 @@
+<mat-card class="dash-board">
+  <mat-header><mat-title>
+        <button mat-button [matMenuTriggerFor]="profile">Profile</button>
+        <mat-menu #profile>
+          <button mat-menu-item>{{userName}}</button>
+          <button mat-menu-item  (click)="logoutUser()">Logout</button>
+        </mat-menu>
+  </mat-title></mat-header>
+  <mat-divider></mat-divider>
+  <mat-card-content><table>
+    <tr class="head-row">
+      <td>Name</td>
+      <td>Email</td>
+      <td>Phone Number</td>
+      <td>Actions</td>
+    </tr>
+    <tr *ngFor="let user of userData">
+      <td>{{user.firstName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.number}}</td>
+      <td>
+        <span></span>
+        <span></span>
+        <span></span>
+      </td>
+    </tr>
+  </table></mat-card-content>
+</mat-card>

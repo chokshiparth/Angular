@@ -1,0 +1,79 @@
+@keyframes register-animation{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.register{
+    display: flex;
+    background-color: red;
+    width: 65vw;
+    position: absolute;
+    box-shadow: rgb(53, 53, 53) 1px 1px 50px;
+    margin-left : 17.5vw;
+    margin-top: 17.5vh;
+    animation: register-animation 1s ease-in-out;
+}
+.registration-form-container{
+    width:40vw;
+    background-color: white;
+    z-index:1;
+}
+.body-login-image{
+    width: 25vw;
+    background: url("../../../../assets/images/supportcontent.jpg");
+    background-size: cover;
+}
+form{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+#row1{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: flex;
+    justify-content: space-between;
+}
+.mat-form-field{
+    width:12vw;
+}
+.profileField{
+    width: 25vw;
+}
+.photoButton{
+    width: 12vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    background-color: orange;
+}
+
+#row2{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+#row2 td{
+    width : 50%;
+}
+#row2 td button{
+    width:100%;
+}
+#back-icon:hover{
+    cursor:pointer;
+    color: grey;
+}
+.submitBtn:hover{
+    background-color: seagreen;
+}
+.submitBtn:disabled{
+    cursor: not-allowed;
+    background-color:lightgray;
+}
+tr{
+    height: 10vh;
+}
+tr{
+    font-size: 12px;
+}
+button{
+    border-radius: 0%;
+}

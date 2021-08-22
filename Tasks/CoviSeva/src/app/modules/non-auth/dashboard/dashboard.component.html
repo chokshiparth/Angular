@@ -1,0 +1,28 @@
+<div class="body-container">
+    <div class="header">
+        <div class="header-container">
+            <div class="header-title-container">COVI SEVA</div>
+            <div class="header-actions-container">
+                <div class="header-actions-login" (click)="redirectToLogin()">
+                    LOGIN
+                </div>
+                <div class="header-action-registration">
+                    REGISTER
+                </div>
+            </div>
+        </div>  
+    </div>
+    <!-- <div class="info">
+        <div class="info-container">
+            <div class="info-message-container">
+                Only Hospitals/NGOs need to register or login.
+            </div>
+        </div>
+    </div> -->
+    <div class="body-container">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="footer-container">
+
+    </div>
+</div>

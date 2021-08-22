@@ -1,0 +1,43 @@
+.login-container{
+    position: absolute;
+    width: 30vw;
+    height: 50vh;
+    background-color: white;
+    margin-left: 35vw;
+    margin-top: 22.5vh;
+    box-shadow: lightgray 1px -1px 15px;
+}
+.login{
+    width: 25vw;
+    margin-left: 2.5vw;
+    margin-top: 10vh;
+}
+.login-body-container{
+    width: 25vw;
+}   
+.mat-form-field{
+    width:100%;
+}
+
+.login-action-container{
+    width: 25vw;
+    display: flex;
+}
+.mat-raised-button{
+    box-shadow: none;
+    border-radius: 0%;
+    width: 12.5vw;
+}
+
+.option-container{
+    width: 15vw;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-option-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}

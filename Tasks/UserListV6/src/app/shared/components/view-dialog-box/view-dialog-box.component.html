@@ -1,0 +1,39 @@
+<!-- Dialog for view user information -->
+<h1 mat-dialog-title>
+    <img [src]="imgurl" alt="not able to load">
+    <div>
+        {{ data.firstname | uppercase }} {{ data.lastname | uppercase }}
+    </div>
+    <h4>
+        {{ data.email }}
+    </h4>
+</h1>
+<hr>
+<div mat-dialog-content>
+    <table>
+        <tr>
+            <th>Gender: </th>
+            <td>{{data.gender}}</td>
+        </tr>
+        <tr>
+            <th>Contact Number: </th>
+            <td>{{data.phonenumber}}</td>
+        </tr>
+        <tr>
+            <th>Country: </th>
+            <td>{{data.country}}</td>
+        </tr>
+        <tr>
+            <th>State: </th>
+            <td>{{data.state}}</td>
+        </tr>
+        <tr>
+            <th>City: </th>
+            <td>{{data.city}}</td>
+        </tr>
+    </table>
+</div>
+<hr>
+<div mat-dialog-actions>
+    <button mat-button mat-raised-button (click)="closeDialog()">Close</button>
+</div>

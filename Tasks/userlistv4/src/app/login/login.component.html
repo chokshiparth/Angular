@@ -1,0 +1,45 @@
+<!--Login component used to provide functionality
+    of login into system.
+-->
+<mat-card class="login-card">
+  <!-- Card title -->
+  <mat-card-header>
+    <mat-card-title class="titleField">LOGIN</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider><br>
+  <!--Card content-->
+  <mat-card-content>
+    <!-- Login Form -->
+    <form [formGroup]="loginForm">
+      <!-- Email id field -->
+      <mat-form-field class="field-styles" appearance="outline" >
+        <mat-label>Email Address</mat-label>
+        <input type="email" matInput formControlName="email" required>
+        <span class="material-icons" matSuffix>email </span>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+          Please add email address.</mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email') && !(loginForm.get('email')?.hasError('required'))">
+          Invalid email address.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Passworrd field -->
+      <mat-form-field class="field-styles" appearance="outline" >
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" required>
+        <span class="material-icons" matSuffix>lock </span>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Please add password.</mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('passwordValidation') && !(loginForm.get('password')?.hasError('required'))">Invalid Password.</mat-error>
+      </mat-form-field>
+
+    </form>
+    <!-- Buttons -->
+    <mat-card-actions>
+      <button color="primary" class="submitBtn"mat-raised-button mat-button  (click)="loginUser()" [disabled]="loginForm.invalid">Login</button>
+      <button color="warn" mat-raised-button mat-button (click)="resetAllValues()">Reset</button><br><br>
+      <table><tr><th style="text-align: center"><a navigateLink="" (click)="routeToRegistrationForm()">Create Account? </a>OR<a href=""> Forgot Password?</a></th>
+      </tr></table>
+    </mat-card-actions>
+    <!-- <button (click)="connect()">Auto Login</button> -->
+  </mat-card-content>
+</mat-card>

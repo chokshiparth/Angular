@@ -1,0 +1,116 @@
+<div class="registration-form-container">
+    <form [formGroup]="registrationForm">
+        <tr id="row1">
+            <!-- Title -->
+            <td>
+                <mat-form-field appearance="outline" class="titleField">
+                <mat-label>Title</mat-label>
+                <mat-select required formControlName="title">
+                    <mat-option *ngFor="let t of title" [value]="t">{{t}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="registrationForm.get('title')?.hasError('required')">Select title.</mat-error>
+                </mat-form-field>
+            </td>
+            <!-- First Name -->
+            <td>
+                <mat-form-field appearance="outline" class="normalFieldR">
+                    <mat-label>First Name</mat-label>
+                    <input type="text" matInput required  formControlName="firstname">
+                    <mat-error *ngIf="registrationForm.get('firstname')?.hasError('required')">Please add first name.</mat-error>
+                    <mat-error *ngIf="registrationForm.get('firstname')?.hasError('nameValidation') && !(registrationForm.get('firstname')?.hasError('required'))">Invalid first name.</mat-error>
+                </mat-form-field>
+            </td>
+            <!-- Last Name -->
+            <td>
+                <mat-form-field appearance="outline" class="normalFieldR">
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" matInput required formControlName="lastname">
+                    <mat-error *ngIf="registrationForm.get('lastname')?.hasError('required')">Please add first name.</mat-error>
+                    <mat-error *ngIf="registrationForm.get('lastname')?.hasError('nameValidation') && !(registrationForm.get('lastname')?.hasError('required'))">Invalid first name.</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr id="row1">
+            <!-- Gender -->
+            <td><mat-form-field appearance="outline" class="titleField">
+                <mat-select required formControlName="gender">
+                    <mat-option *ngFor="let g of gender" [value]="g" >{{g}}</mat-option>
+                </mat-select>
+                <mat-label>Gender</mat-label>
+                <mat-error *ngIf="registrationForm.get('gender')?.hasError('required')">Select gender.</mat-error>
+            </mat-form-field></td>
+            <!-- Email address -->
+            <td><mat-form-field appearance="outline" class="normalFieldR">
+                <input type="email" matInput required formControlName="email">
+                <mat-label>Email Address</mat-label>
+                <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">Please add email address.</mat-error>
+                <mat-error *ngIf="registrationForm.get('email')?.hasError('email') && !(registrationForm.get('email')?.hasError('required'))">Invalid email address.</mat-error>
+            </mat-form-field></td>
+            <!-- Phone Number -->
+            <td><mat-form-field appearance="outline" class="normalFieldR">
+                <input type="number" matInput required formControlName="phoneNumber">
+                <mat-label>Phone Number</mat-label>
+                <mat-error *ngIf="registrationForm.get('phoneNumber')?.hasError('required')">Please add phone number.</mat-error>
+                <mat-error *ngIf="registrationForm.get('phoneNumber')?.hasError('phoneNumValidation')
+                && !(registrationForm.get('phoneNumber')?.hasError('required'))">Invalid phone number.</mat-error>
+            </mat-form-field></td>
+        </tr>
+        <tr id="row1">
+            <td><mat-form-field appearance="outline" class="normalField">
+                <mat-select type="text" required formControlName="countryName" (blur)="fetchLocationName('state')" >
+                    <mat-option *ngFor="let country of countryList" [value]="country">{{country.name}}</mat-option>
+                </mat-select>
+                <mat-label>Country</mat-label>
+                <mat-error *ngIf="registrationForm.get('countryName')?.hasError('required')">Please select country.</mat-error>
+            </mat-form-field></td>
+            <td><mat-form-field appearance="outline" class="normalField">
+                <mat-select type="text" required formControlName="stateName" (blur)="fetchLocationName('city')">
+                    <mat-option *ngFor="let state of stateList" [value]="state">{{state.name}}</mat-option>
+                </mat-select>
+                <mat-label>State</mat-label>
+                <mat-error *ngIf="registrationForm.get('stateName')?.hasError('required')">Please select state.</mat-error>
+            </mat-form-field></td>
+            <td><mat-form-field appearance="outline" class="normalField">
+                <mat-select type="text" required formControlName="cityName" (blur)="fetchLocationName('citystore')">
+                    <mat-option *ngFor="let city of cityList" [cityId]="city.id" [value]="city">{{city.name}}</mat-option>
+                </mat-select>
+                <mat-label> City </mat-label>
+                <mat-error *ngIf="registrationForm.get('cityNamee')?.hasError('required')">Please select city.</mat-error>
+            </mat-form-field></td>
+        </tr>
+        <tr id="row1">
+            <td><mat-form-field appearance="outline" class="normalField" style="width: 19.5vw">
+                <input matInput required formControlName="imageName">
+                <input type="file" style="display:none" id="imgFile" (change)="imageChange($event)">
+                <mat-label>Profile Photo</mat-label>
+                <mat-error *ngIf="registrationForm.get('imageName')?.hasError('required')">Please select your photo.</mat-error>
+            </mat-form-field></td>
+            <td><div class="normalField" style="width: 19.5vw;height: 100%;margin-top: 1vh">
+                <button type="button" style="width: 100%" mat-button mat-raised-button color="primary" (click)="openFileModule()">Select Photo</button>
+              </div></td>
+        </tr>
+        <tr id="row1">
+            <td><mat-form-field appearance="outline" class="normalField" style="width:19.5vw">
+                <input type="password" matInput required formControlName="password">
+                <mat-label>Password</mat-label>
+                <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">Please add password.</mat-error>
+                <mat-error *ngIf="registrationForm.get('password')?.hasError('passwordValidation') && !(registrationForm.get('password')?.hasError('required'))">Invalid Password.</mat-error>
+            </mat-form-field></td>
+            <td><mat-form-field appearance="outline" class="normalField" style="width:19.5vw">
+                <input type="password" matInput required formControlName="confirmPassword" (blur)="checkConfirmPassword()">
+                <mat-label>Confirm Password</mat-label>
+                <mat-error *ngIf="registrationForm.get('confirmPassword')?.hasError('required')">Please add confirm password.</mat-error>
+                <mat-error *ngIf="registrationForm.get('password')?.hasError('passwordValidation') && !(registrationForm.get('confirmPassword')?.hasError('required'))">Invalid Password.</mat-error>
+                <mat-error *ngIf="notMatch && !(registrationForm.get('confirmPassword')?.hasError('required')) && !(registrationForm.get('password')?.hasError('passwordValidation'))">Password doesn't match.</mat-error>
+            </mat-form-field></td>
+        </tr>
+        <tr id="row2" style="height: 6vh;">
+            <td>
+                <mat-card-actions style="margin-right:0.1vw">
+                    <button type="submit" color="primary" class="submitBtn" mat-raised-button mat-button [disabled]="registrationForm.invalid" (click)="submitForm()">Register</button>
+                    <button type="button" color="warn" mat-raised-button mat-button (click)="resetForm()">Reset</button>
+                </mat-card-actions>
+            </td>
+        </tr>
+    </form>
+</div>

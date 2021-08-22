@@ -1,0 +1,42 @@
+.login-card{
+    position: absolute;
+    width: 25vw;
+    text-align: center;
+    background-color:white;
+    margin-top: 20vh;
+    margin-left: 60vw;
+    box-shadow: lightgray 2px 2px 2px 2px 2px;
+}
+.button-row{
+    width:100%;
+}
+.field-styles{
+    width:100%;
+}
+a{
+    font-size: 15px;
+    font-weight: initial;
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color:blue;
+    cursor: pointer;
+}
+button{
+    width: 46%;
+}
+table{
+    width: 100%;
+}
+th{
+    font-size: 15px;
+    color: black;
+    letter-spacing: 1px;
+}
+.submitBtn:disabled:hover{
+    cursor:not-allowed;
+}
+.submitBtn{
+    background-color: seagreen;
+}

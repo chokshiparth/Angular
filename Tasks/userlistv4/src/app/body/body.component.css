@@ -1,0 +1,31 @@
+.dash-board{
+  background-color: white;
+  width: 80vw;
+  height: 60vh;
+  margin-left: 7vw;
+  margin-top: 15vh;
+}
+mat-title{
+  display: flex;
+  justify-content: left;
+}
+.head-row{
+  background-color: cornflowerblue;
+  color:white;
+}
+table{
+  width: 100%;
+  text-align: center;
+  height: auto;
+}
+td{
+  padding: 0 0;
+  border: none;
+  font-size: 14px;
+}
+mat-card-content{
+  margin-top: 1vh;
+}
+button{
+  margin-bottom: 2vh;
+}

@@ -1,0 +1,9 @@
+<!-- This component will use to inform user about -->
+<!--  activation link sent over mail id. -->
+<div id="box">
+    <p *ngIf="flag==1"> We have sent activation link on your <b>{{value}}</b> account. Link will expire in 
+        <b>{{ Minutes }} : {{ Seconds }}</b>
+    </p>
+    <p *ngIf="flag==2"> Verifying email address...</p>
+    <p *ngIf="flag==3"> Email Verified Successfully.</p>
+</div>

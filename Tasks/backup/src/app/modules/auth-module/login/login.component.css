@@ -1,0 +1,134 @@
+mat-card-header{
+  display: flex;
+  justify-content: center;
+}
+/* Mat card styles*/
+mat-card{
+  background-color: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+.mat-form-field{
+  width: 80%;
+}
+mat-card-content{
+  display: flex;
+  justify-content: space-evenly;
+}
+.button-container{
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 10%;
+}
+
+button{
+  width: 100%;
+  border-radius: 0%;
+}
+
+/* Animation for login container*/
+@keyframes login-container-animation {
+  0%{opacity: 0}
+  67%{opacity: 0}
+  100%{opacity: 1}
+}
+.login-container{
+  position: absolute;
+  z-index: 1;
+  width: 50vw;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 25vw;
+  margin-top: 25vh;
+  box-shadow: rgba(59,59,59,0.9) 1px -1px 50px;
+  animation-name: login-container-animation;
+  animation-duration: 3s;
+}
+
+.body-login-image{
+  width: 20vw;
+  height: 50vh;
+  background: url("src/assets/images/background/supportcontent.jpg");
+  background-size: cover;
+}
+
+.body-text{
+  width: 30vw;
+  height: 50vh;
+  background-color: white;
+  position: relative;
+}
+/* Animation for intro line*/
+@keyframes intro-line-animation {
+  from{margin-top: 25vh; opacity: 0%}
+  to{margin-top: 8vh}
+}
+/* Animation for password polici*/
+@keyframes password-policy-animation{
+  from{opacity: 0;}
+  to{opacity:1}
+}
+
+/* Password Policy */
+.password-policy{
+  text-align: left;
+  background-color: rgb(37, 36, 36);
+  width: 12vw;
+  height: 15vh;
+  color:white;
+  position: absolute;
+  display: none;
+  margin-left: 1vw;
+  margin-top:0vh;
+  border-radius: 5px;
+  box-shadow: black 1px 1px 15px;
+  animation-name: password-policy-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+li{
+  margin-left: 0.5vw;
+  font-size: 12px;
+}
+.display-pwd:hover + .password-policy{
+  display:initial;
+}
+
+
+/* Animation for intro line two */
+@keyframes intro-line-two-animation {
+  0%{opacity: 0}
+  67%{opacity: 0}
+  100%{opacity: 1}
+}
+.intro-line-two{
+  font-size: 16px;
+  animation-name: intro-line-two-animation;
+  animation-duration: 3s;
+}
+.intro-line{
+  position: absolute;
+  color: white;
+  font-family: Roboto;
+  word-spacing: 3px;
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: 8vh;
+  animation-name: intro-line-animation;
+  animation-duration: 1s;
+}
+
+/* Animation for hr element*/
+@keyframes hr-animation {
+  0%{width: 0vw; opacity: 0}
+  50%{width: 0vw; opacity: 0}
+  100%{width: 50vw}
+}
+hr{
+  animation-name: hr-animation;
+  animation-duration: 2s;
+  width: 50vw
+}

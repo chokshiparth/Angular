@@ -1,0 +1,31 @@
+<div class="dashboard"> 
+    <div class="dashboard-header">
+        <span class="title-dashboard">DASHBOARD</span>
+        <span class="material-icons menu-icon">logout</span>
+    </div>
+    <div class="dashboard-view-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr *ngFor="let user of userData">
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.number}}</td>
+                    <td>
+                        
+                        <span class="material-icons" style="color:bdarkblue">visibility</span>
+                        <span class="material-icons" style="color:green">edit</span>
+                        <span class="material-icons" style="color:darkred" (click)="openDeleteDialog(user.email)">delete</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
